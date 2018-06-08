@@ -57,4 +57,8 @@ namespace BasicSynthesizer
 			}
 		}
 	}
+	public enum WaveForm
+	{
+		Sine, Square, Saw, Triangle, Noise
+	}
 }
