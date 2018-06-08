@@ -28,7 +28,33 @@ namespace BasicSynthesizer
 			Random random = new Random();
 			short[] wave = new short[SAMPLE_RATE];
 			byte[] binaryWave = new byte[SAMPLE_RATE * sizeof(short)];
-			float frequency = 440f;
+			float frequency;
+			switch(e.KeyCode)
+			{
+				case Keys.Z:
+					frequency = 65.4f;	// C2
+					break;
+				case Keys.X:
+					frequency = 138.59f; //C3
+					break;
+				case Keys.C:
+					frequency = 261.62f; //C4
+					break;
+				case Keys.V:
+					frequency = 523.25f; //C5
+					break;
+				case Keys.B:
+					frequency = 1046.5f; //C6
+					break;
+				case Keys.N:
+					frequency = 2093f;	//C7
+					break;
+				case Keys.M:
+					frequency = 4186.01f;	//C8
+					break;
+				default:
+					return;
+			}
 			foreach(Oscillator oscillator in this.Controls.OfType<Oscillator>())
 			{
 				int samplesPerWaveLength = (int)(SAMPLE_RATE / frequency);
