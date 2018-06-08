@@ -57,7 +57,6 @@ namespace BasicSynthesizer
 		{
 			Button button = (Button)sender;
 			this.WaveForm = (WaveForm)Enum.Parse(typeof(WaveForm), button.Text);
-			MessageBox.Show($"The button you pressed was {this.WaveForm}");
 			foreach(Button otherButtons in this.Controls.OfType<Button>())
 			{
 				otherButtons.UseVisualStyleBackColor = true;

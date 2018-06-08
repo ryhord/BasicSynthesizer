@@ -33,7 +33,7 @@
 			// 
 			// oscillator1
 			// 
-			this.oscillator1.Location = new System.Drawing.Point(167, 115);
+			this.oscillator1.Location = new System.Drawing.Point(106, 79);
 			this.oscillator1.Name = "oscillator1";
 			this.oscillator1.Size = new System.Drawing.Size(200, 100);
 			this.oscillator1.TabIndex = 0;
