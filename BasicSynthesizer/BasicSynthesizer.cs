@@ -78,7 +78,7 @@ namespace BasicSynthesizer
 						for (int i = 0; i < SAMPLE_RATE; i++)
 						{
 							tempSample = -short.MaxValue;
-							for (int j = 0; j < samplesPerWaveLength; j++)
+							for (int j = 0; j < samplesPerWaveLength && i < SAMPLE_RATE; j++)
 							{
 								tempSample += ampStep;
 								wave[i++] = Convert.ToInt16(tempSample);
