@@ -49,9 +49,18 @@ namespace BasicSynthesizer
 				control.Font = new Font("Microsoft Sans Serif", 6.75f);
 				control.Click += WaveButton_Click;
 			}
+			this.Controls.Add(new CheckBox()
+			{
+				Name = "OscillatorOn",
+				Location = new Point(210, 10),
+				Size = new Size(40, 30),
+				Text = "On",
+				Checked = true
+			});
 		}
 
 		public WaveForm WaveForm { get; private set; }
+		public bool On => ((CheckBox)this.Controls["OscillatorOn"]).Checked;
 
 		private void WaveButton_Click(object sender, EventArgs e)
 		{

@@ -25,7 +25,7 @@ namespace BasicSynthesizer
 
 		private void BasicSynthesizer_KeyDown(object sender, KeyEventArgs e)
 		{
-			IEnumerable<Oscillator> oscillators = this.Controls.OfType<Oscillator>();
+			IEnumerable<Oscillator> oscillators = this.Controls.OfType<Oscillator>().Where(o => o.On);
 			Random random = new Random();
 			short[] wave = new short[SAMPLE_RATE];
 			byte[] binaryWave = new byte[SAMPLE_RATE * sizeof(short)];
@@ -80,7 +80,7 @@ namespace BasicSynthesizer
 						for (int i = 0; i < SAMPLE_RATE; i++)
 						{
 							tempSample = -short.MaxValue;
-							for (int j = 0; j < samplesPerWaveLength; j++)
+							for (int j = 0; j < samplesPerWaveLength && i < SAMPLE_RATE; j++)
 							{
 								tempSample += ampStep;
 								wave[i++] += Convert.ToInt16(tempSample / oscillatorsCount);
